@@ -1,0 +1,7 @@
+.idea/
+*/__pycache__/*
+__pycache__/
+extras/
+.vscode/.ropeproject
+modules/sec/req/cascades
+venv/
