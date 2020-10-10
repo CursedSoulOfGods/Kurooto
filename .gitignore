@@ -5,3 +5,5 @@ extras/
 .vscode/.ropeproject
 modules/sec/req/cascades
 venv/
+token.pickle
+credentials.json
