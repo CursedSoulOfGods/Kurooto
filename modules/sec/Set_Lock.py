@@ -5,6 +5,7 @@ import os
 # check current
 path_to_req = os.path.dirname(__file__) + "\/req"
 path_to_sec_type = path_to_req + "\sec_type.KRT"
+path_to_pin_key = path_to_req + "\KS_PIN.EKEYKRT"
 if "sec_type.KRT" in path_to_sec_type:
     lock_check = open(path_to_sec_type, "r")
     lock_type_current = lock_check.read()
@@ -39,7 +40,7 @@ if 'yes' in choice:
         write_pin.close()
 
         # getting encryption key
-        pin_key = load_key_pass_id()
+        pin_key = load_key_pass_id(path_to_pin_key)
 
         # encryption of file
 

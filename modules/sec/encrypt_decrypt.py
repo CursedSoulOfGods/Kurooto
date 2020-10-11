@@ -1,11 +1,8 @@
 from cryptography.fernet import Fernet
 import os
 
-path_to_base = os.path.dirname(__file__)
-path_to_pin_key = path_to_base + "\/req\KS_PIN.EKEYKRT"
 
-
-def load_key_pass_id():
+def load_key_pass_id(path_to_pin_key):
     # loads the key
     return open(path_to_pin_key, "rb").read()
 
