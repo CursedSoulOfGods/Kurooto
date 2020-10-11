@@ -1,6 +1,7 @@
 import time
 from encrypt_decrypt import load_key_pass_id, encrypt_file
 import os
+from cryptography.fernet import Fernet
 
 # check current
 path_to_req = os.path.dirname(__file__) + "\/req"
@@ -27,6 +28,10 @@ if 'yes' in choice:
     lock_set.close()
 
     # getting password
+    key = Fernet.generate_key()
+    store_key = open(path_to_pin_key, 'wb')
+    store_key.write(key)
+    store_key.close()
 
     password = input("Please input the pin you want to use\n")
     confirm_password = input("Please confirm the PIN\n")
