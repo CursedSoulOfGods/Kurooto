@@ -6,4 +6,12 @@ extras/
 modules/sec/req/cascades
 venv/
 token.pickle
-credentials.json
+client_secret.json
+user/mail_service/email.KRT
+modules/sec/req/KS_PIN.EKEYKRT
+modules/sec/req/pin.EKRT
+modules/sec/req/labels.pickle
+modules/sec/req/trainer.yml
+roi.png
+
+
