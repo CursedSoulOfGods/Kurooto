@@ -1,6 +1,4 @@
 from __future__ import print_function
-import site
-import os
 import datetime
 import pickle
 import os.path
@@ -27,7 +25,7 @@ def getCalCreds():
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_secrets_file("credentials.json", SCOPES)
+            flow = InstalledAppFlow.from_client_secrets_file("client_secret.json", SCOPES)
             creds = flow.run_local_server(port=0)
         # Save the credentials for the next run
         with open('token.pickle', 'wb') as token:
@@ -52,7 +50,3 @@ def getEvents(n, service):
         start = event['start'].get('dateTime', event['start'].get('date'))
         print(start, event['summary'])
         speak(event['summary'])
-
-if __name__ == '__main__':
-    getCalCreds()
-
