@@ -2,16 +2,16 @@
 import site
 import sys
 import os
-import random
+from random import choice
 module_path = os.path.dirname(__file__) + "\modules"
 site.addsitedir(module_path)
 site.addsitedir(module_path + "\sec")
 site.addsitedir(module_path + "\cal")
 from authn_prcess import *
-from eml_prcess import *
-from fl_wrtr import *
+from google_mail_process import send_email
+from file_writer import *
 from search_eng import *
-from sys_pow_cmds import *
+from sys_cmd import *
 from wish_me import *
 from wikipedia import *
 from google_cal_process import *
@@ -20,7 +20,7 @@ from i_o_engine import *
 # import serial
 
 # Srl_send = serial.Serial('com6', 57600)
-random.seed(time.process_time())
+#random.seed(time.process_time())
 Srl_send = None
 
 def relay1ON():
@@ -82,11 +82,11 @@ def masterOFF():
 
 # event trigger
 if __name__ == "__main__":
-    getCurrentLock()
+    #getCurrentLock()
     wishMe()
     getDate()
     # getWeather()
-    checkSpecialDays()
+    #checkSpecialDays()
     random_knowledge()
     # the whole commands
     while True:
@@ -118,49 +118,10 @@ if __name__ == "__main__":
             speak(f"Sir, the time is {strTime}")
 
         # emails
-        elif 'email to my id' in query:
-            try:
-                speak("What should I say?")
-                content = takeCommand()
-                to = "sumangalam_avtar@yahoo.com"
-                sendEmail(to, content)
-                speak("Email has been sent!")
-            except Exception as e:
-                print(e)
-                speak("Sorry your majesty. I am not able to send this email")
 
-        elif 'email to sarika' in query:
-            try:
-                speak("What should I say?")
-                content = takeCommand()
-                to = "sarikasharma259@gmail.com"
-                sendEmail(to, content)
-                speak("Email has been sent!")
-            except Exception as e:
-                print(e)
-                speak("Sorry your majesty. I am not able to send this email")
-
-        elif 'email to siddharth' in query:
-            try:
-                speak("What should I say?")
-                content = takeCommand()
-                to = "avtarbuilders1978@gmail.com"
-                sendEmail(to, content)
-                speak("Email has been sent!")
-            except Exception as e:
-                print(e)
-                speak("Sorry your majesty. I am not able to send this email")
-
-        elif 'email to papa' in query:
-            try:
-                speak("What should I say?")
-                content = takeCommand()
-                to = "avtarbuilders1978@gmail.com"
-                sendEmail(to, content)
-                speak("Email has been sent!")
-            except Exception as e:
-                print(e)
-                speak("Sorry your majesty. I am not able to send this email")
+        elif 'email to ' in query:
+            to = ""
+            send_email(to)
 
         elif 'write a file' in query:
             fileWrite()
