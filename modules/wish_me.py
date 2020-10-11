@@ -22,5 +22,5 @@ def getDate():
 def checkSpecialDays():
     check_month = int(datetime.datetime.now().month)
     check_day = int(datetime.datetime.now().day)
-    if check_month == 7 and check_day == 26:
+    if check_month == "your birth month" and check_day == "your birth date":
         speak("It's your birthday Sir!!! Happy Birthday, sorry I can't give you any presents, but it's been a great time working with you, thanks for making me so I can feel these moments for myself")
