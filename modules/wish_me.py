@@ -1,5 +1,5 @@
 import datetime
-from modules.i_o_engine import speak
+from i_o_engine import speak
 
 
 def wishMe():
@@ -16,7 +16,8 @@ def wishMe():
 
 def getDate():
     date = datetime.datetime.now().date()
-    speak(f"Today is {date}, hope you are having a great day and will continue to have it")
+    time = datetime.datetime.now().strftime("%H %M")
+    speak(f"Today is {date} and it's {time}. Sir, I hope you are having a great day and will continue to have it")
 
 
 def checkSpecialDays():
