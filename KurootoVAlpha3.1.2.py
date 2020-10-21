@@ -12,8 +12,9 @@ from google_mail_process import send_email
 from file_writer import *
 from search_eng import *
 from sys_cmd import *
-from wish_me import *
-from wikipedia import *
+from wish_me import getDate
+from wish_me import wishMe
+from wikipedia_module import random_knowledge
 from google_cal_process import *
 from getWeather import getWeather
 from i_o_engine import *
