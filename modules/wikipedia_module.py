@@ -1,8 +1,7 @@
-from modules.i_o_engine import *
+from i_o_engine import *
 import wikipedia
 import webbrowser
 import time
-
 
 def wikiSearch(query):
     speak('Searching Wikipedia...')
