@@ -3,7 +3,7 @@ from modules.i_o_engine import speak
 import os
 
 
-base_dir = os.path.dirname(__file__).replace("modules/", "Files/")
+base_dir = os.path.dirname(__file__).replace("modules/", "user/written_files/")
 
 
 def fileWrite():
