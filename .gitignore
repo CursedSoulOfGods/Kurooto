@@ -2,7 +2,7 @@
 */__pycache__/*
 __pycache__/
 extras/
-.vscode/.ropeproject
+.vscode/
 modules/sec/req/cascades
 venv/
 token.pickle
@@ -12,5 +12,3 @@ modules/sec/req/pin.EKRT
 modules/sec/req/labels.pickle
 modules/sec/req/trainer.yml
 roi.png
-
-
