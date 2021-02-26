@@ -20,7 +20,7 @@ def getDate():
     time = datetime.datetime.now().strftime("%H %M")
     speak(f"Today is {date} and it's {time}. Sir, I hope you are having a great day and will continue to have it")
 
-
+'''
 def checkSpecialDays():
     check_month = int(datetime.datetime.now().month)
     check_day = int(datetime.datetime.now().day)
@@ -38,3 +38,4 @@ def checkSpecialDays():
 
     if check_month == month and check_day == date:
         speak("It's your birthday Sir!!! Happy Birthday, sorry I can't give you any presents, but it's been a great time working with you, thanks for making me so I can feel these moments for myself")
+'''

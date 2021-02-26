@@ -1,7 +1,8 @@
 from i_o_engine import *
 import wikipedia
-import webbrowser
-import time
+#import webbrowser
+#import time
+
 
 def wikiSearch(query):
     speak('Searching Wikipedia...')
@@ -11,7 +12,7 @@ def wikiSearch(query):
     print(results)
     speak(results)
 
-
+'''
 def random_knowledge():
     page_to_be_provided = wikipedia.random(1)
     speak("Sir! Do you want to read about" + page_to_be_provided)
@@ -32,3 +33,4 @@ def random_knowledge():
             speak("Ok Sir!")
     if 'no' in read_y_or_n:
         speak("Ok Sir!")
+'''

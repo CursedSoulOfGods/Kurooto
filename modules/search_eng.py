@@ -1,8 +1,8 @@
 from modules.i_o_engine import speak
 import webbrowser
 import time
-from selenium import webdriver
-import random
+# from selenium import webdriver
+# import random
 
 
 def search(query):
@@ -18,7 +18,7 @@ def search(query):
 def openWebsite(website_name):
     webbrowser.open(website_name)
 
-
+'''
 def searchYoutube(query):
     address = 'https://www.youtube.com/results?search_query='
     query = query.replace("find videos on youtube for", "")
@@ -42,3 +42,4 @@ def my_mix_shuffle():
     speak("Here's Your music Sir!")
     play_music = driver.find_element_by_class_name("style-scope ytd-call-to-action-button-renderer")
     play_music.click()
+'''
