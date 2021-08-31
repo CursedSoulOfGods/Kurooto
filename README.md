@@ -2,7 +2,7 @@
 Official Repository of Kurooto, The AI which powers all of the Armors of Sumangalam Avtar Sharma
 For more info, contact at sumangalam_avtar@yahoo.com
 ## Prerequisites
-* **Python Version 3.7** or higher **with pip installed** and Python added to **Environment Variables**
+* **Python Version 3.9 with pip installed** and Python added to **Environment Variables**
 # Installation Procedure (WINDOWS ONLY)
 1. Download the release from [here](https://github.com/cursedsoulofgods/Kurooto/archive/master.zip)
 2. Once downloaded, extract the resulting archive in a suitable location
@@ -28,4 +28,4 @@ For more info, contact at sumangalam_avtar@yahoo.com
     5. Now execute the following command - `python set_threshold.py`
     6. Follow the instructions and enter the required amount of Threshold
     **Threshold refers to the amount of pressure required for your voice to be detected,    the higher the threshold, the louder your voice will need to be and the more the        backgound noises will be avoided. Having a higher threshold value is better in noisy    environments**
-    7. Now in the same command prompt, execute the following command to install PyAudio - `pip install PyAudio-0.2.11-cp37-cp37m-win_amd64.whl`
+    7. Now in the same command prompt, execute the following command to install PyAudio - `pip install PyAudio-0.2.11-cp39-cp39-win_amd64.whl`
