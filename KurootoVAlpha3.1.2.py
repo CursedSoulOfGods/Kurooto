@@ -19,12 +19,20 @@ from getWeather import getWeather
 from i_o_engine import *
 
 
+#city defining
+city_store_loc = os.path.normpath(os.path.join((os.path.dirname(os.path.abspath(__file__))), "user\\user_info"))
+city_store = open(city_store_loc + "\city.KRT", 'r')
+city = city_store.read()
+city_store.close()
+city_f = city+" weather"
+
+
 # event trigger
 if __name__ == "__main__":
     #getCurrentLock()
     wishMe()
     getDate()
-    #getWeather()
+    getWeather(city_f)
     #checkSpecialDays()
     #random_knowledge()
     # the whole commands

@@ -1,20 +1,21 @@
-from selenium import webdriver
-from modules.i_o_engine import speak
+from bs4 import BeautifulSoup
+import requests
+from i_o_engine import speak
+import os
 
-
-def getWeather():
-    PATH = "C:\Program Files (x86)\msedgedriver.exe"
-    driver = webdriver.Edge(PATH)
-    add = "https://weather.com/en-IN/weather/today/l/bdac7e9b00c8e927c0e20b6055cd4e4f38b0ecbdac85f53dc05b1e606065e962"
-    speak("Hold on a minute sir, let me get the weather info for you")
-    driver.get(add)
-    driver.minimize_window()
-    weather = driver.find_element_by_class_name("_-_-components-src-organism-CurrentConditions-CurrentConditions--tempValue--MHmYY").text
-    condition = driver.find_element_by_class_name("_-_-components-src-organism-CurrentConditions-CurrentConditions--phraseValue--mZC_p").text
-    try:
-        prep_chance = driver.find_element_by_class_name("_-_-components-src-organism-CurrentConditions-CurrentConditions--precipValue--2aJSf").text
-        driver.close()
-        speak(f"Temperature right now is {weather} and it's {condition} outside. There are {prep_chance}")
-    except Exception:
-        driver.close()
-        speak(f"Temperature right now is {weather} and it's {condition} outside.")
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
+ 
+ 
+def getWeather(city):
+    city = city.replace(" ", "+")
+    res = requests.get(
+        f'https://www.google.com/search?q={city}&oq={city}&aqs=chrome.0.35i39l2j0l4j46j69i60.6128j1j7&sourceid=chrome&ie=UTF-8', headers=headers)
+    print("Searching...\n")
+    soup = BeautifulSoup(res.text, 'html.parser')
+    location = soup.select('#wob_loc')[0].getText().strip()
+    time = soup.select('#wob_dts')[0].getText().strip()
+    info = soup.select('#wob_dc')[0].getText().strip()
+    weather = soup.select('#wob_tm')[0].getText().strip()
+    speak("Weather in," + location + ",is," + weather+" ° Celsius")
+ 
